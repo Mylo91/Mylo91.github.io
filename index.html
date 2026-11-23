@@ -50,8 +50,8 @@ h3{font-size:1.35rem}
 }
 
 /* ---------- hero ---------- */
-.hero{text-align:center;padding:40px 0 40px}
-.couple{width:min(300px,72%);height:auto;margin:0 auto}
+.hero{text-align:center;padding:56px 0 40px}
+.hero .branch{display:block;width:min(300px,80%);margin:0 auto}
 .ill{display:block;width:120px;height:90px;margin:0 auto}
 .names{font-family:var(--script);font-weight:400;font-size:clamp(4.4rem,17vw,8rem);color:var(--ink);line-height:1.15;margin:4px 0 0}
 .rule{width:min(220px,55%);height:1.5px;background:var(--ink);border:0;margin:14px auto 20px}
@@ -79,14 +79,21 @@ section:nth-of-type(even){background:var(--surface)}
 .polaroid img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .polaroid figcaption{font-family:var(--script);font-size:1.6rem;line-height:1.3;text-align:center;padding:4px 0 2px;color:var(--ink)}
 @media (min-width:861px){
-  .polaroid.float{position:absolute;top:-84px;width:172px;z-index:5}
+  .polaroid.float{position:absolute;top:var(--top,-84px);width:172px;z-index:5}
   .polaroid.float.left{left:8px}.polaroid.float.right{right:8px}
   .polaroid.float:hover{transform:rotate(0) scale(1.06)}
 }
+@media (min-width:1440px){
+  /* wide screens: photos drift in the side margins, beside the content */
+  .polaroid.float{top:var(--top-wide,20%);width:190px}
+  .polaroid.float.left{left:-215px}.polaroid.float.right{right:-215px}
+}
 @media (max-width:860px){
-  .polaroid.float{width:min(180px,48%);margin:-8px auto 30px}
-  .polaroid.float.left{transform:translateX(-32%) rotate(var(--r))}
-  .polaroid.float.right{transform:translateX(32%) rotate(var(--r))}
+  .polaroid.float{width:40%;max-width:170px;margin:4px 0 14px;position:relative;z-index:2}
+  .polaroid.float.left{float:left;margin-right:16px}
+  .polaroid.float.right,.polaroid.float.m-right{float:right;margin-left:16px;margin-right:0}
+  .polaroid figcaption{font-size:1.25rem}
+  .timeline,.days,#map,.recs,.info{clear:both}
 }
 
 /* schedule */
@@ -273,10 +280,25 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
 <!-- ======================= WELCOME ======================= -->
 <div class="hero" id="welcome">
   <div class="wrap">
-    <img class="couple" src="images/couple.png" width="512" height="526" alt="Ildi &amp; Kostas riding a donkey">
+    <svg class="branch" viewBox="0 0 300 70" fill="none" stroke="#161616" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 50c30-6 58-14 92-15 30-1 52 6 84 3 34-3 64-14 100-24"/>
+    <path d="M70 40c-4-6-10-9-16-9"/><path d="M226 26c3-6 8-10 14-11"/>
+    <g style="fill:var(--sage)" fill-opacity=".45">
+      <path d="M40 45c-3-8 1-15 9-17 1 8-3 14-9 17z"/><path d="M56 41c6-6 14-6 19-1-6 4-13 5-19 1z"/>
+      <path d="M96 35c-2-8 2-14 10-16 1 8-3 13-10 16z"/><path d="M112 35c7-4 15-3 19 3-7 3-14 2-19-3z"/>
+      <path d="M196 37c-1-8 4-13 12-14 0 8-5 13-12 14z"/><path d="M214 33c6-5 14-5 18 1-6 4-13 4-18-1z"/>
+      <path d="M262 22c-1-7 4-12 11-13 0 7-5 12-11 13z"/>
+    </g>
+    <use href="#i-daisy" x="138" y="22" width="26" height="26"/>
+    <use href="#i-daisy" x="20" y="38" width="20" height="20"/>
+    <use href="#i-daisy" x="272" y="4" width="20" height="20"/>
+    <use href="#i-daisy" x="168" y="34" width="15" height="15"/>
+    <path d="M158 14s-6.5-4-6.5-8.6a3.6 3.6 0 0 1 6.5-2.2 3.6 3.6 0 0 1 6.5 2.2c0 4.6-6.5 8.6-6.5 8.6z" fill="#b3121b" stroke="none"/>
+  </svg>
     <h1 class="names">Ildi &amp; Kostas</h1>
     <hr class="rule">
     <div class="date" data-i18n="welcome.date"></div>
+    <figure class="polaroid float left m-right" style="--r:-3deg;--top:150px;--top-wide:170px"><img src="images/moments/donkey.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.donkey"></figcaption></figure>
     <p class="welcome-msg" data-i18n="welcome.msg"></p>
     <div class="venue">
       <strong>Kiwi Garden</strong>
@@ -292,7 +314,7 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
 <!-- ======================= SCHEDULE ======================= -->
 <section id="schedule">
   <div class="wrap">
-    <figure class="polaroid float right" style="--r:3deg"><img src="images/moments/yes.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.yes"></figcaption></figure>
+    <figure class="polaroid float right" style="--r:3deg;--top:190px;--top-wide:120px"><img src="images/moments/yes.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.yes"></figcaption></figure>
     <span class="kicker"><svg class="ill" aria-hidden="true"><use href="#ill-glasses"/></svg></span>
     <h2 data-i18n="schedule.title"></h2>
     <p class="lead" data-i18n="schedule.lead"></p>
@@ -309,7 +331,7 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
 <!-- ======================= ACTIVITIES ======================= -->
 <section id="activities">
   <div class="wrap">
-    <figure class="polaroid float left" style="--r:-3.5deg"><img src="images/moments/jump.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.jump"></figcaption></figure>
+    <figure class="polaroid float left" style="--r:-3.5deg;--top:-84px;--top-wide:35%"><img src="images/moments/jump.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.jump"></figcaption></figure>
     <span class="kicker"><svg class="ill" aria-hidden="true"><use href="#ill-boat"/></svg></span>
     <h2 data-i18n="activities.title"></h2>
     <p class="lead" data-i18n="activities.lead"></p>
@@ -340,7 +362,7 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
 <!-- ======================= PRACTICAL ======================= -->
 <section id="practical">
   <div class="wrap">
-    <figure class="polaroid float right" style="--r:2.5deg"><img src="images/moments/crete.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.crete"></figcaption></figure>
+    <figure class="polaroid float right" style="--r:2.5deg;--top:-84px;--top-wide:40%"><img src="images/moments/crete.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.crete"></figcaption></figure>
     <span class="kicker"><svg class="ill" aria-hidden="true"><use href="#ill-sprig"/></svg></span>
     <h2 data-i18n="practical.title"></h2>
     <p class="lead" data-i18n="practical.lead"></p>
@@ -392,7 +414,7 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
 <!-- ======================= ENJOY ======================= -->
 <section id="enjoy">
   <div class="wrap">
-    <figure class="polaroid float left" style="--r:-2.5deg"><img src="images/moments/lavender.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.lavender"></figcaption></figure>
+    <figure class="polaroid float left" style="--r:-2.5deg;--top:-84px;--top-wide:8%"><img src="images/moments/lavender.jpg" width="800" height="1000" loading="lazy" alt=""><figcaption data-i18n="moments.lavender"></figcaption></figure>
     <span class="kicker"><svg class="ill" aria-hidden="true"><use href="#ill-olives"/></svg></span>
     <h2 data-i18n="enjoy.title"></h2>
     <p class="lead" data-i18n="enjoy.lead"></p>
@@ -456,7 +478,7 @@ en: {
   "practical.dress1":"Smart / cocktail. Wear comfortable shoes for dancing and bring a light layer for the evening.",
   "enjoy.title":"Enjoy Thessaloniki","enjoy.lead":"Our tips for your days in the city. Mostly about food, of course. Photos of us eating all of it are coming soon.",
   "rec.directions":"Directions","rec.onmap":"On map",
-  "moments.crete":"Crete, windswept","moments.lavender":"Lavender & love","moments.yes":"She said yes!","moments.jump":"Even higher!",
+  "moments.crete":"Crete, windswept","moments.donkey":"Meeting the real donkey","moments.lavender":"Lavender & love","moments.yes":"She said yes!","moments.jump":"Even higher!",
   "footer.gift":"Your presence is the greatest gift.","footer.questions":"Questions? Just message us."
 },
 hu: {
@@ -498,7 +520,7 @@ hu: {
   "practical.dress1":"Elegáns / koktél. Kényelmes cipő a tánchoz, és egy könnyű réteg estére.",
   "enjoy.title":"Fedezd fel Szalonikit","enjoy.lead":"Tippjeink a városban töltött napokra. Persze főleg evésről szólnak. Hamarosan fotók is jönnek rólunk, ahogy mindent megkóstolunk.",
   "rec.directions":"Útvonal","rec.onmap":"Térképen",
-  "moments.crete":"Kréta, kócosan","moments.lavender":"Levendula és szerelem","moments.yes":"Igent mondott!","moments.jump":"Még magasabbra!",
+  "moments.crete":"Kréta, kócosan","moments.donkey":"Az igazi szamár","moments.lavender":"Levendula és szerelem","moments.yes":"Igent mondott!","moments.jump":"Még magasabbra!",
   "footer.gift":"A jelenlétetek a legnagyobb ajándék.","footer.questions":"Kérdésetek van? Írjatok nekünk bátran."
 }
 };
