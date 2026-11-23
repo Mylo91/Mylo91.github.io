@@ -135,7 +135,10 @@ footer .gift{font-family:var(--serif);font-size:1.5rem;font-style:italic}
 footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margin-top:18px}
 
 /* leaflet bits */
-.leaflet-tile-pane{filter:saturate(.45) sepia(.18) brightness(1.03)}
+.leaflet-tile-pane{filter:sepia(.08)}
+.map-label{background:transparent;border:0;box-shadow:none;padding:0;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#55524c;text-shadow:0 0 3px #fff,0 0 3px #fff}
+.map-label.sea{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:.02em;font-size:.95rem;font-weight:400;color:#7d8a93}
+.map-label::before{display:none}
 .leaflet-popup-content{font-family:var(--sans);font-size:.88rem;line-height:1.45}
 .leaflet-popup-content b{font-family:var(--serif);font-size:1.05rem;font-weight:600}
 .venue-pin{background:#fff;color:var(--heart);border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.25)}
@@ -550,6 +553,19 @@ const STAY_ZONE = [
   [40.6335,22.9375]
 ];
 
+/* Place-name labels drawn on the map (the base map has none). */
+const MAP_LABELS = [
+  {t:{en:"Ladadika",hu:"Ladadika"},lat:40.6358,lng:22.9352},
+  {t:{en:"Egnatia St.",hu:"Egnatia utca"},lat:40.6392,lng:22.9445},
+  {t:{en:"White Tower",hu:"Fehér Torony"},lat:40.6248,lng:22.9500},
+  {t:{en:"Ano Poli (old town)",hu:"Ano Poli (óváros)"},lat:40.6440,lng:22.9560},
+  {t:{en:"Evzonon",hu:"Evzonon"},lat:40.6110,lng:22.9625},
+  {t:{en:"Faliro",hu:"Faliro"},lat:40.6020,lng:22.9615},
+  {t:{en:"Kalamaria",hu:"Kalamaria"},lat:40.5835,lng:22.9560},
+  {t:{en:"Airport (SKG)",hu:"Repülőtér (SKG)"},lat:40.5197,lng:22.9709},
+  {t:{en:"Thermaic Gulf",hu:"Thermai-öböl"},lat:40.5990,lng:22.9150,sea:true}
+];
+
 /* ===================================================================== */
 const CAT_COLOR = {food:"#161616",drinks:"#5f7052",sights:"#6f8fa3"};
 const SUPPORTED = ["en","hu"];
@@ -607,10 +623,12 @@ function setLang(l){
 function initMap(){
   if (!window.L) { document.getElementById("map").style.display = "none"; return; }
   map = L.map("map", {scrollWheelZoom:false, tap:true});
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom:19,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  // Label-free base map (OSM labels in Greece are in Greek); our own Latin labels are added below.
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+    maxNativeZoom:16, maxZoom:18,
+    attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors'
   }).addTo(map);
+  map.labels = MAP_LABELS.map(l => L.tooltip({permanent:true, direction:"center", className:"map-label"+(l.sea?" sea":"")}).setLatLng([l.lat,l.lng]).addTo(map));
   map.zone = L.polygon(STAY_ZONE, {color:"#5f7052", weight:2, dashArray:"6 6", fillColor:"#8a9a7b", fillOpacity:.22}).addTo(map);
   map.zone.bindTooltip("", {permanent:true, direction:"center", className:"zone-label"});
   RECS.forEach(r => r.places.forEach((p,i) => {
@@ -627,6 +645,7 @@ function updateMapText(){
   if (!map) return;
   const t = T[lang];
   map.zone.setTooltipContent(t["map.zone"]);
+  map.labels.forEach((tt,i) => tt.setContent(pick(MAP_LABELS[i].t)));
   map.zone.bindPopup(t["map.zonePop"]);
   venueMarker.bindPopup(`<b>Kiwi Garden</b><br>${esc(t["map.venuePop"])}<br><a href="${dirUrl(VENUE)}" target="_blank" rel="noopener">${esc(t["welcome.directions"])} ↗</a>`);
   Object.values(markers).forEach(({m,r,p}) => m.bindPopup(`<b>${esc(pick(r.t))}</b><br>${esc(pick(p.name))} · ${esc(pick(p.addr))}<br><a href="${dirUrl(p)}" target="_blank" rel="noopener">${esc(t["rec.directions"])} ↗</a>`));
