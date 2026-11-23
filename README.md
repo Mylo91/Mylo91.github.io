@@ -16,14 +16,14 @@ No build step: edit `index.html`, commit, push to `main`, live in ~1 minute.
 
 ## Editing text
 
-All wording lives in the `T` object near the bottom of `index.html`, one block per language (`en`, `hu`, `el`).
-Change the text for the same key in all three blocks.
+All wording lives in the `T` object near the bottom of `index.html`, one block per language (`en`, `hu`).
+Change the text for the same key in both blocks.
 
 **TBA items:** `activities.when13` and `activities.when15`. Replace "Time & place TBA…" with e.g. `18:00 · White Tower`.
 
 ## Recommendations
 
-Defined in the `RECS` list in `index.html`. Each has an `id`, a category (`food` / `drinks` / `sights`, which sets the colour), an icon, text in three languages and one or more `places` with coordinates.
+Defined in the `RECS` list in `index.html`. Each has an `id`, a category (`food` / `drinks` / `sights`, which sets the colour), an icon, text in both languages and one or more `places` with coordinates.
 Places marked `est:true` have estimated coordinates. Check them on the map.
 
 ## Adding photos

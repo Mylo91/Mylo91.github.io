@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6f1e8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23161616'%3EI%26amp;K%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- EB Garamond + Manrope both support Greek and Hungarian (ő, ű). Corinthia is only used for the Latin-script names. -->
+<!-- EB Garamond + Manrope both support Hungarian (ő, ű). Corinthia is only used for the Latin-script names. -->
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600&family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
@@ -205,7 +205,7 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
       <a href="#enjoy" data-i18n="nav.enjoy"></a>
     </nav>
     <div class="langs" role="group" aria-label="Language">
-      <button data-lang="en">EN</button><button data-lang="hu">HU</button><button data-lang="el">ΕΛ</button>
+      <button data-lang="en">EN</button><button data-lang="hu">HU</button>
     </div>
   </div>
 </header>
@@ -351,7 +351,7 @@ footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margi
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 /* =====================================================================
-   TEXT — edit wording here. Keys must exist in all three languages.
+   TEXT — edit wording here. Keys must exist in both languages.
    ===================================================================== */
 const T = {
 en: {
@@ -433,46 +433,6 @@ hu: {
   "practical.dress1":"Elegáns / koktél. Kényelmes cipő a tánchoz, és egy könnyű réteg estére.",
   "enjoy.title":"Fedezd fel Szalonikit","enjoy.lead":"Tippjeink a városban töltött napokra. Persze főleg evésről szólnak. Hamarosan fotók is jönnek rólunk, ahogy mindent megkóstolunk.",
   "rec.directions":"Útvonal","rec.onmap":"Térképen"
-},
-el: {
-  "nav.welcome":"Καλώς ήρθατε","nav.schedule":"Πρόγραμμα","nav.activities":"Δραστηριότητες","nav.practical":"Διαμονή & μετακίνηση","nav.enjoy":"Απολαύστε τη Θεσσαλονίκη",
-  "welcome.date":"14 Μαΐου 2027",
-  "welcome.msg":"Κάναμε έναν γάμο που θέλουμε να κρατήσει, και θέλουμε να τον γιορτάσουμε με τους ανθρώπους που αγαπάμε.",
-  "welcome.address":"ΕΟ Αεροδρομίου Θεσσαλονίκης, Θέρμη 570 01",
-  "welcome.directions":"Οδηγίες διαδρομής",
-  "welcome.looking":"Ανυπομονούμε να γιορτάσουμε μαζί σας!",
-  "schedule.title":"Η μεγάλη μέρα","schedule.lead":"Παρασκευή, 14 Μαΐου 2027 · Kiwi Garden",
-  "schedule.s1":"Άφιξη καλεσμένων · ποτό καλωσορίσματος","schedule.s2":"Ανταλλαγή όρκων","schedule.s3":"Σερβίρεται το δείπνο","schedule.s4":"Παιχνίδια","schedule.s5":"Ξεκινάει το πάρτι!",
-  "activities.title":"Δραστηριότητες","activities.lead":"Λίγες μέρες μαζί στη Θεσσαλονίκη. Ελάτε σε όσα θέλετε.",
-  "activities.d13":"Πέμπτη · 13 Μαΐου","activities.t13":"Tiki boat & βόλτα στην παραλία",
-  "activities.p13":"Βόλτα στην παραλία και μετά πάνω στο Tiki boat για ένα ποτό μέσα στη θάλασσα.",
-  "activities.when13":"Ώρα & σημείο θα ανακοινωθούν εδώ",
-  "activities.d14":"Παρασκευή · 14 Μαΐου","activities.t14":"Η μέρα του γάμου",
-  "activities.p14":"Απολαύστε το πρωινό, χαλαρώστε και ετοιμαστείτε για το πάρτι.",
-  "activities.when14":"Πάρτι από τις 19:00",
-  "activities.d15":"Σάββατο · 15 Μαΐου","activities.t15":"Brunch αποκατάστασης",
-  "activities.p15":"Αν καταφέρετε να ξυπνήσετε, σας καλούμε για brunch να πάρουμε πίσω τις δυνάμεις μας.",
-  "activities.when15":"Ώρα & σημείο θα ανακοινωθούν εδώ",
-  "practical.title":"Διαμονή & μετακίνηση","practical.lead":"Ό,τι χρειάζεστε για να κινηθείτε στην πόλη.",
-  "map.zone":"Πού θα μέναμε εμείς","map.food":"Φαγητό","map.drinks":"Ποτό & θέα","map.sights":"Βόλτες","map.showVenue":"Πού είναι ο χώρος;","map.showCity":"Πίσω στην πόλη",
-  "map.venuePop":"Ο χώρος του γάμου, περίπου 25 λεπτά με ταξί από το κέντρο.","map.zonePop":"Η περιοχή που προτείνουμε για διαμονή",
-  "practical.stayT":"Πού να μείνετε",
-  "practical.stay1":"Προτείνουμε να μείνετε στο κέντρο, κατά προτίμηση κάτω από την Εγνατία, ή στην περιοχή Ευζώνων ή Φαλήρου (η σκιασμένη περιοχή στον χάρτη). Η ζωή της πόλης είναι κυρίως στο κέντρο.",
-  "practical.stay2":"Ο χώρος είναι κοντά στο αεροδρόμιο, αλλά δεν έχει νόημα να κλείσετε διαμονή εκεί. Τις υπόλοιπες μέρες θα θέλετε να απολαύσετε την πόλη.",
-  "practical.moveT":"Μετακίνηση",
-  "practical.move1":"Η πόλη έχει καινούργιο μετρό (επιτέλους!) και δίκτυο λεωφορείων. Εισιτήρια μετρό θα βρείτε στα μηχανήματα κάθε σταθμού. Στο λεωφορείο πληρώνετε με κάρτα μέσα στο όχημα ή αγοράζετε εισιτήριο από περίπτερο.",
-  "practical.move2":"Τα εισιτήρια λεωφορείου και μετρό ίσως είναι ξεχωριστά. Δείτε τα επίσημα sites για τρέχοντα εισιτήρια και τιμές.",
-  "practical.taxiT":"Ταξί & η βραδιά του γάμου",
-  "practical.taxi1":"Το FREENOW και το Uber λειτουργούν στη Θεσσαλονίκη και καλούν κανονικά ταξί.",
-  "practical.taxi2":"Τη μέρα του γάμου προτείνουμε ταξί (περίπου 20–25 € από το κέντρο), για να απολαύσετε το πάρτι χωρίς κανέναν περιορισμό. Για την επιστροφή κλείστε από πριν ή ζητήστε από το προσωπικό του χώρου να καλέσει, γιατί αργά το βράδυ κοντά στο αεροδρόμιο μπορεί να αργήσει.",
-  "practical.arriveT":"Άφιξη",
-  "practical.arrive1":"Το αεροδρόμιο Μακεδονία (SKG) απέχει περίπου 15 χλμ. από το κέντρο και είναι πολύ κοντά στον χώρο. Με ταξί είστε στην πόλη σε περίπου 25 λεπτά. Υπάρχει και λεωφορείο αεροδρομίου.",
-  "practical.weatherT":"Καιρός",
-  "practical.weather1":"Στα μέσα Μαΐου ο καιρός είναι υπέροχος: περίπου 24°C τη μέρα και 15°C το βράδυ.",
-  "practical.dressT":"Dress code",
-  "practical.dress1":"Smart / cocktail. Άνετα παπούτσια για χορό και κάτι ελαφρύ για το βράδυ.",
-  "enjoy.title":"Απολαύστε τη Θεσσαλονίκη","enjoy.lead":"Οι προτάσεις μας για τις μέρες σας στην πόλη. Κυρίως για φαγητό, φυσικά. Σύντομα και φωτογραφίες μας να τα τρώμε όλα.",
-  "rec.directions":"Διαδρομή","rec.onmap":"Στον χάρτη"
 }
 };
 
@@ -482,69 +442,59 @@ el: {
    ===================================================================== */
 const RECS = [
  {id:"trigona",cat:"food",icon:"triangle",
-  t:{en:"Trigona Elenidis",hu:"Trigona Elenidis",el:"Τρίγωνα Ελενίδη"},
+  t:{en:"Trigona Elenidis",hu:"Trigona Elenidis"},
   d:{en:"Crispy, syrupy filo triangles filled with amazing cream. A Thessaloniki classic.",
-     hu:"Ropogós, szirupos réteslap-háromszögek isteni krémmel töltve. Igazi szaloniki klasszikus.",
-     el:"Τραγανά σιροπιαστά τρίγωνα από φύλλο, γεμιστά με απίθανη κρέμα. Κλασική Θεσσαλονίκη."},
+     hu:"Ropogós, szirupos réteslap-háromszögek isteni krémmel töltve. Igazi szaloniki klasszikus."},
   places:[{name:"Trigona Elenidis",addr:"Dim. Gounari 13, 546 22",lat:40.62896,lng:22.94851}]},
  {id:"soutzoukakia",cat:"food",icon:"bowl",
-  t:{en:"Soutzoukakia",hu:"Soutzoukakia",el:"Σουτζουκάκια"},
+  t:{en:"Soutzoukakia",hu:"Soutzoukakia"},
   d:{en:"Try the most amazing soutzoukakia: spiced meatballs in a rich tomato sauce.",
-     hu:"Kóstoljátok meg a legfantasztikusabb soutzoukakiát: fűszeres húsgombóc gazdag paradicsomszószban.",
-     el:"Δοκιμάστε τα πιο απίθανα σουτζουκάκια της πόλης."},
+     hu:"Kóstoljátok meg a legfantasztikusabb soutzoukakiát: fűszeres húsgombóc gazdag paradicsomszószban."},
   places:[{name:"Soutzoukakia",addr:"Pl. Fanarioton 2, 546 22",lat:40.62826,lng:22.94789}]},
  {id:"tiki-boat",cat:"drinks",icon:"boat",
-  t:{en:"Tiki boat",hu:"Tiki hajó",el:"Tiki boat"},
+  t:{en:"Tiki boat",hu:"Tiki hajó"},
   d:{en:"When the weather is good, catch a boat in front of the White Tower. We recommend the Tiki Bar (Jamaica vibes). A 20-minute trip with no entrance fee, you just pay for your drink.",
-     hu:"Jó időben szálljatok fel egy hajóra a Fehér Torony előtt. Mi a Tiki Bart ajánljuk (jamaicai hangulat). 20 perces kör, belépő nincs, csak az italt kell kifizetni.",
-     el:"Όταν έχει καλό καιρό, πάρτε ένα καραβάκι μπροστά από τον Λευκό Πύργο. Προτείνουμε το Tiki Bar (Jamaica vibes). 20 λεπτά βόλτα, χωρίς είσοδο, πληρώνετε μόνο το ποτό."},
-  places:[{name:{en:"White Tower pier",hu:"Fehér Torony, kikötő",el:"Λευκός Πύργος"},addr:"Leoforos Nikis",lat:40.62600,lng:22.94780}]},
+     hu:"Jó időben szálljatok fel egy hajóra a Fehér Torony előtt. Mi a Tiki Bart ajánljuk (jamaicai hangulat). 20 perces kör, belépő nincs, csak az italt kell kifizetni."},
+  places:[{name:{en:"White Tower pier",hu:"Fehér Torony, kikötő"},addr:"Leoforos Nikis",lat:40.62600,lng:22.94780}]},
  {id:"promenade",cat:"sights",icon:"walk",
-  t:{en:"Promenade walk",hu:"Séta a rakparton",el:"Βόλτα στην παραλία"},
+  t:{en:"Promenade walk",hu:"Séta a rakparton"},
   d:{en:"Go for a walk along the seafront and catch some sun. Start from the White Tower and walk towards the Concert Hall.",
-     hu:"Sétáljatok a tengerparti sétányon, és élvezzétek a napsütést. Induljatok a Fehér Toronytól a Koncertterem irányába.",
-     el:"Περπατήστε στη Νέα Παραλία και πάρτε λίγο ήλιο. Ξεκινήστε από τον Λευκό Πύργο με κατεύθυνση το Μέγαρο Μουσικής."},
-  places:[{name:{en:"White Tower",hu:"Fehér Torony",el:"Λευκός Πύργος"},addr:"Start",lat:40.62633,lng:22.94838},
-          {name:{en:"Concert Hall",hu:"Koncertterem",el:"Μέγαρο Μουσικής"},addr:"Finish",lat:40.59773,lng:22.94763}]},
+     hu:"Sétáljatok a tengerparti sétányon, és élvezzétek a napsütést. Induljatok a Fehér Toronytól a Koncertterem irányába."},
+  places:[{name:{en:"White Tower",hu:"Fehér Torony"},addr:"Start",lat:40.62633,lng:22.94838},
+          {name:{en:"Concert Hall",hu:"Koncertterem"},addr:"Finish",lat:40.59773,lng:22.94763}]},
  {id:"profiterole",cat:"food",icon:"puff",
-  t:{en:"Profiterole at Choureal",hu:"Profiterol a Chourealban",el:"Προφιτερόλ στο Χουρεάλ"},
+  t:{en:"Profiterole at Choureal",hu:"Profiterol a Chourealban"},
   d:{en:"The profiterole to end all profiteroles. Two shops in the centre.",
-     hu:"A profiterolok profiterolja. Két üzlet is van a belvárosban.",
-     el:"Το προφιτερόλ που θα θυμάστε. Δύο καταστήματα στο κέντρο."},
+     hu:"A profiterolok profiterolja. Két üzlet is van a belvárosban."},
   places:[{name:"Choureal",addr:"El. Venizelou 20, 546 24",lat:40.63430,lng:22.94180,est:true},
           {name:"Choureal",addr:"Paleon Patron Germanou 9, 546 22",lat:40.63135,lng:22.94644}]},
  {id:"byzantio",cat:"drinks",icon:"castle",
-  t:{en:"Ano Poli & Byzantio Skybar",hu:"Ano Poli és Byzantio Skybar",el:"Άνω Πόλη & Byzantio Skybar"},
+  t:{en:"Ano Poli & Byzantio Skybar",hu:"Ano Poli és Byzantio Skybar"},
   d:{en:"If you visit Ano Poli (the hilly old town), and especially the Heptapyrgion fortress, grab a coffee or a beer at Byzantio Skybar for a great view.",
-     hu:"Ha felmentek az Ano Polira (a dombos óvárosba), különösen a Heptapyrgion erődhöz, igyatok meg egy kávét vagy sört a Byzantio Skybarban, csodás a kilátás.",
-     el:"Αν ανεβείτε στην Άνω Πόλη και ειδικά στο Επταπύργιο, πιείτε έναν καφέ ή μια μπίρα στο Byzantio Skybar για υπέροχη θέα."},
+     hu:"Ha felmentek az Ano Polira (a dombos óvárosba), különösen a Heptapyrgion erődhöz, igyatok meg egy kávét vagy sört a Byzantio Skybarban, csodás a kilátás."},
   places:[{name:"Byzantio Skybar",addr:"Eptapirgiou 102, 546 34",lat:40.64230,lng:22.96010,est:true}]},
  {id:"gyros",cat:"food",icon:"gyros",
-  t:{en:"Gyros at Savikos",hu:"Gyros a Savikosban",el:"Γύρος στο Savikos"},
+  t:{en:"Gyros at Savikos",hu:"Gyros a Savikosban"},
   d:{en:"You can't leave without a proper gyros. Savikos, right on Aristotelous Square.",
-     hu:"Nem mehettek haza egy igazi gyros nélkül. Savikos, közvetlenül az Arisztotelész téren.",
-     el:"Δεν φεύγετε χωρίς έναν σωστό γύρο. Savikos, πάνω στην Πλατεία Αριστοτέλους."},
+     hu:"Nem mehettek haza egy igazi gyros nélkül. Savikos, közvetlenül az Arisztotelész téren."},
   places:[{name:"Savikos",addr:"Aristotelous 8, 546 22",lat:40.63357,lng:22.94251}]},
  {id:"bougatsa",cat:"food",icon:"pie",
-  t:{en:"Bougatsa",hu:"Bougatsa",el:"Μπουγάτσα"},
+  t:{en:"Bougatsa",hu:"Bougatsa"},
   d:{en:"Have a bougatsa one morning. Anywhere is good! For something special, try Bougatsa Giannis: minced-meat bougatsa with Greek yogurt on top or, for the sweet-toothed, sweet bougatsa topped with Merenda.",
-     hu:"Egyik reggel egyetek egy bougatsát. Bárhol jó! Ha valami különlegesre vágytok, próbáljátok a Bougatsa Giannisban a darált húsos bougatsát görög joghurttal, vagy az édesszájúak a Merenda-krémes édes változatot.",
-     el:"Ένα πρωί φάτε μπουγάτσα. Οπουδήποτε είναι καλή! Για κάτι ξεχωριστό δοκιμάστε στον Γιάννη μπουγάτσα με κιμά και γιαούρτι από πάνω ή, για τους λάτρεις του γλυκού, γλυκιά με Μερέντα."},
+     hu:"Egyik reggel egyetek egy bougatsát. Bárhol jó! Ha valami különlegesre vágytok, próbáljátok a Bougatsa Giannisban a darált húsos bougatsát görög joghurttal, vagy az édesszájúak a Merenda-krémes édes változatot."},
   places:[{name:"Bougatsa Giannis",addr:"Mitropoleos 106, 546 21",lat:40.62792,lng:22.94924}]},
  {id:"meze",cat:"food",icon:"fish",
-  t:{en:"Fish & meze",hu:"Hal és meze",el:"Ψάρι & μεζέδες"},
+  t:{en:"Fish & meze",hu:"Hal és meze"},
   d:{en:"Long, slow lunches with small plates to share.",
-     hu:"Hosszú, ráérős ebédek közös kis tálakkal.",
-     el:"Μεγάλα, χαλαρά τραπέζια με μεζέδες για μοίρασμα."},
+     hu:"Hosszú, ráérős ebédek közös kis tálakkal."},
   places:[{name:"Mezen",addr:"Rogkoti 3, 546 24",lat:40.63464,lng:22.93866},
           {name:"Elliniko",addr:"Str. Kallari 9, 546 22",lat:40.62840,lng:22.94727}]},
  {id:"drinks",cat:"drinks",icon:"glass",
-  t:{en:"Evening drinks",hu:"Esti italozás",el:"Βραδινό ποτό"},
+  t:{en:"Evening drinks",hu:"Esti italozás"},
   d:{en:"In the evening, head to the Valaoritou or Ladadika area for cool bars and pubs.",
-     hu:"Este menjetek a Valaoritou vagy a Ladadika negyedbe, tele vannak jó bárokkal és pubokkal.",
-     el:"Το βράδυ πηγαίνετε στη Βαλαωρίτου ή στα Λαδάδικα για ωραία μπαρ."},
-  places:[{name:"Valaoritou",addr:{en:"Bar street",hu:"Bárutca",el:"Περιοχή μπαρ"},lat:40.63750,lng:22.93932},
-          {name:"Ladadika",addr:{en:"Old port quarter",hu:"Régi kikötőnegyed",el:"Παλιά συνοικία λιμανιού"},lat:40.63510,lng:22.93694}]}
+     hu:"Este menjetek a Valaoritou vagy a Ladadika negyedbe, tele vannak jó bárokkal és pubokkal."},
+  places:[{name:"Valaoritou",addr:{en:"Bar street",hu:"Bárutca"},lat:40.63750,lng:22.93932},
+          {name:"Ladadika",addr:{en:"Old port quarter",hu:"Régi kikötőnegyed"},lat:40.63510,lng:22.93694}]}
 ];
 
 const VENUE = {lat:40.533010,lng:23.005335};
@@ -560,7 +510,7 @@ const STAY_ZONE = [
 
 /* ===================================================================== */
 const CAT_COLOR = {food:"#161616",drinks:"#5f7052",sights:"#6f8fa3"};
-const SUPPORTED = ["en","hu","el"];
+const SUPPORTED = ["en","hu"];
 let lang = "en", map, markers = {}, venueMarker, showingVenue = false;
 const pick = v => (v && typeof v === "object") ? (v[lang] || v.en) : v;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -570,7 +520,7 @@ function detectLang(){
   try { const s = localStorage.getItem("lang"); if (SUPPORTED.includes(s)) return s; } catch(e){}
   for (const l of (navigator.languages || [navigator.language || "en"])) {
     const c = String(l).slice(0,2).toLowerCase();
-    if (c === "el" || c === "hu") return c;
+    if (c === "hu") return c;
   }
   return "en";
 }
