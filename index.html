@@ -5,41 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Ildi &amp; Kostas · 14.05.2027</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6f1e8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23b8664a'%3EI%26amp;K%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6f1e8'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23161616'%3EI%26amp;K%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- EB Garamond + Manrope both support Greek and Hungarian (ő, ű). Parisienne is only used for the Latin-script names. -->
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<!-- EB Garamond + Manrope both support Greek and Hungarian (ő, ű). Corinthia is only used for the Latin-script names. -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600&family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
 :root{
-  --bg:#f7f2ea; --surface:#fffdf9; --ink:#3a3530; --muted:#7a7068;
-  --sage:#8a9a7b; --sage-soft:#e4e9dc; --sage-deep:#5f7052;
-  --terra:#b8664a; --terra-soft:#f3e1d8; --sky:#6f8fa3; --line:#e6ddd0;
+  --bg:#fbf8f2; --surface:#fffefb; --ink:#161616; --muted:#66625b;
+  --sage:#8a9a7b; --sage-soft:#e8ecdf; --sage-deep:#5f7052;
+  --accent:#161616; --accent-soft:#eef1e6; --heart:#b3121b; --sky:#6f8fa3; --line:#e4dfd4;
   --radius:18px; --shadow:0 1px 2px rgba(58,53,48,.05),0 8px 24px rgba(58,53,48,.06);
-  --serif:"EB Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --script:"Parisienne",cursive;
+  --serif:"EB Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --script:"Corinthia",cursive;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:var(--terra)}
+a{color:var(--accent)}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2;margin:0}
 h2{font-size:clamp(2rem,5vw,2.6rem);text-align:center}
 h3{font-size:1.35rem}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-.icon{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
 /* ---------- top bar ---------- */
 .bar{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar .wrap{display:flex;align-items:center;gap:16px;height:60px}
-.mono{font-family:var(--script);font-size:1.6rem;color:var(--terra);text-decoration:none;white-space:nowrap}
+.mono{font-family:var(--script);font-size:2rem;color:var(--accent);text-decoration:none;white-space:nowrap}
 .nav{display:flex;gap:4px;margin-left:auto}
 .nav a{color:var(--ink);text-decoration:none;font-size:.88rem;padding:6px 10px;border-radius:999px}
 .nav a:hover{background:var(--sage-soft)}
 .langs{display:flex;gap:2px;font-size:.85rem;font-weight:600;letter-spacing:.04em}
 .langs button{border:0;background:none;font:inherit;color:var(--muted);padding:6px 7px;border-radius:8px;cursor:pointer}
-.langs button[aria-pressed="true"]{color:var(--terra);background:var(--terra-soft)}
+.langs button[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft)}
 .menu-btn{display:none;border:0;background:none;color:var(--ink);padding:6px;cursor:pointer}
 @media (max-width:860px){
   .menu-btn{display:block;margin-left:auto}
@@ -51,17 +51,18 @@ h3{font-size:1.35rem}
 
 /* ---------- hero ---------- */
 .hero{text-align:center;padding:56px 0 40px}
-.hero .branch{width:min(260px,70%);margin:0 auto;color:var(--sage)}
-.names{font-family:var(--script);font-weight:400;font-size:clamp(3.4rem,13vw,6rem);color:var(--terra);line-height:1.1;margin:8px 0 0}
-.date{font-family:var(--serif);font-size:1.4rem;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.hero .branch{width:min(300px,80%);margin:0 auto}
+.names{font-family:var(--script);font-weight:400;font-size:clamp(4.4rem,17vw,8rem);color:var(--ink);line-height:1.15;margin:4px 0 0}
+.rule{width:min(220px,55%);height:1.5px;background:var(--ink);border:0;margin:14px auto 20px}
+.date{font-family:var(--sans);font-weight:400;font-size:1.15rem;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em}
 .welcome-msg{font-family:var(--serif);font-size:clamp(1.25rem,3.4vw,1.55rem);font-style:italic;max-width:620px;margin:28px auto 0;color:var(--ink)}
 .venue{margin:28px auto 0;display:inline-flex;flex-direction:column;align-items:center;gap:2px}
 .venue strong{font-family:var(--serif);font-size:1.4rem;font-weight:500}
 .venue > span{color:var(--muted);font-size:.95rem}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;text-decoration:none;border-radius:999px;padding:11px 20px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;margin-top:18px}
-.btn:hover{background:#a5583e}
-.btn.ghost{background:transparent;color:var(--terra);border:1.5px solid var(--terra)}
-.btn.ghost:hover{background:var(--terra-soft)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:11px 20px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;margin-top:18px}
+.btn:hover{background:#3a3a3a}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
 .looking{margin-top:28px;color:var(--muted)}
 
 /* ---------- sections ---------- */
@@ -74,7 +75,7 @@ section:nth-of-type(even){background:var(--surface)}
 /* schedule */
 .timeline{list-style:none;margin:0 auto;padding:0;max-width:520px}
 .timeline li{display:grid;grid-template-columns:72px 24px 1fr;align-items:start;gap:12px;padding:0 0 26px;position:relative}
-.timeline time{font-family:var(--serif);font-size:1.35rem;color:var(--terra);text-align:right;line-height:1.3}
+.timeline time{font-family:var(--serif);font-size:1.35rem;color:var(--accent);text-align:right;line-height:1.3}
 .timeline .dot{width:12px;height:12px;border-radius:50%;background:var(--sage);margin:8px auto 0;box-shadow:0 0 0 5px var(--sage-soft);position:relative;z-index:1}
 .timeline li:not(:last-child)::after{content:"";position:absolute;left:calc(72px + 12px + 11px);top:22px;bottom:2px;width:2px;background:var(--line)}
 .timeline span{font-size:1.08rem;padding-top:4px}
@@ -83,7 +84,7 @@ section:nth-of-type(even){background:var(--surface)}
 .days{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
 .day{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
 section:nth-of-type(even) .day{background:var(--bg)}
-.day.main{border-color:var(--terra);background:var(--terra-soft)!important}
+.day.main{border-color:var(--accent);background:var(--accent-soft)!important}
 .day .d{font-family:var(--serif);font-size:1rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sage-deep)}
 .day h3{margin:6px 0 8px}
 .day p{margin:0 0 10px}
@@ -99,7 +100,7 @@ section:nth-of-type(even) .day{background:var(--bg)}
 .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .info article{background:var(--surface);border-radius:var(--radius);padding:24px;border:1px solid var(--line)}
 .info h3{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.info h3 .icon{color:var(--terra)}
+.info h3 .icon{color:var(--accent)}
 .info p{margin:0 0 10px}
 .info p:last-child{margin-bottom:0}
 .links{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.92rem}
@@ -108,11 +109,13 @@ section:nth-of-type(even) .day{background:var(--bg)}
 .recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
 .rec{background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
 .rec .ph{aspect-ratio:16/10;display:grid;place-items:center;background-size:cover;background-position:center}
-.rec .ph .icon{width:56px;height:56px;stroke-width:1.2}
+.rec .ph{position:relative}
+.rec .ph .icon{width:56px;height:56px;stroke-width:1.1;color:var(--ink)}
+.rec .ph .daisy{position:absolute;top:12px;right:14px;width:22px;height:22px;stroke-width:1.1;color:var(--ink)}
 .rec .ph.has-img .icon{display:none}
-.rec.food .ph{background-color:var(--terra-soft);color:var(--terra)}
-.rec.drinks .ph{background-color:var(--sage-soft);color:var(--sage-deep)}
-.rec.sights .ph{background-color:#e2eaef;color:var(--sky)}
+.rec.food .ph{background-color:#f3efe6}
+.rec.drinks .ph{background-color:var(--sage-soft)}
+.rec.sights .ph{background-color:#e8eef0}
 .rec .body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
 .rec h3{margin-bottom:6px}
 .rec p{margin:0 0 12px}
@@ -120,21 +123,21 @@ section:nth-of-type(even) .day{background:var(--bg)}
 .rec .places li{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
 .rec .places b{color:var(--ink);font-weight:600}
 .rec .acts{display:flex;gap:14px;margin-top:4px}
-.rec .acts a,.rec .acts button{display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:.85rem;font-weight:600;color:var(--terra);background:none;border:0;padding:0;cursor:pointer;text-decoration:none}
+.rec .acts a,.rec .acts button{display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:.85rem;font-weight:600;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:none}
 .rec .acts .icon{width:1em;height:1em}
 
 /* footer */
 footer{text-align:center;padding:64px 0 72px;background:var(--sage-soft)}
-footer .branch{width:160px;margin:0 auto 14px;color:var(--sage-deep)}
+footer .branch{width:200px;margin:0 auto 14px}
 footer p{margin:6px 0}
 footer .gift{font-family:var(--serif);font-size:1.5rem;font-style:italic}
-footer .sig{font-family:var(--script);font-size:2rem;color:var(--terra);margin-top:18px}
+footer .sig{font-family:var(--script);font-size:2.8rem;color:var(--accent);margin-top:18px}
 
 /* leaflet bits */
 .leaflet-tile-pane{filter:saturate(.45) sepia(.18) brightness(1.03)}
 .leaflet-popup-content{font-family:var(--sans);font-size:.88rem;line-height:1.45}
 .leaflet-popup-content b{font-family:var(--serif);font-size:1.05rem;font-weight:600}
-.venue-pin{background:var(--terra);color:#fff;border-radius:50%;display:grid;place-items:center;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.venue-pin{background:#fff;color:var(--heart);border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .zone-label{background:transparent;border:0;box-shadow:none;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--sage-deep)}
 .zone-label::before{display:none}
 </style>
@@ -165,21 +168,27 @@ footer .sig{font-family:var(--script);font-size:2rem;color:var(--terra);margin-t
   <symbol id="i-pie" viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="9" rx="2"/><path d="M3.5 12.5h17M9.2 8v9M14.8 8v9"/><path d="M8 5.5c.7-.8 1.3-.8 2 0s1.3.8 2 0 1.3-.8 2 0"/></symbol>
   <symbol id="i-fish" viewBox="0 0 24 24"><path d="M2.5 12c3-4.2 8.5-5.2 12.5-2.6L19.5 6v12L15 14.6c-4 2.6-9.5 1.6-12.5-2.6z"/><circle cx="7.5" cy="11.2" r=".7"/></symbol>
   <symbol id="i-glass" viewBox="0 0 24 24"><path d="M5 4h14l-7 8z"/><path d="M12 12v7.5M8 20h8M8.5 8h7"/><circle cx="17.5" cy="3.5" r="1.5"/></symbol>
+  <symbol id="i-daisy" viewBox="0 0 24 24"><g style="fill:var(--surface)"><ellipse cx="12" cy="6" rx="2.4" ry="4"/><ellipse cx="12" cy="6" rx="2.4" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="6" rx="2.4" ry="4" transform="rotate(120 12 12)"/><ellipse cx="12" cy="6" rx="2.4" ry="4" transform="rotate(180 12 12)"/><ellipse cx="12" cy="6" rx="2.4" ry="4" transform="rotate(240 12 12)"/><ellipse cx="12" cy="6" rx="2.4" ry="4" transform="rotate(300 12 12)"/></g><circle cx="12" cy="12" r="2.3" style="fill:var(--sage)"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10C19.5 15.4 12 20 12 20z"/></symbol>
 </svg>
 
 <!-- Decorative branch used in header & footer -->
 <template id="branch-tpl">
-  <svg class="branch" viewBox="0 0 260 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
-    <path d="M10 40 C70 30 140 28 250 22"/>
-    <g fill="currentColor" fill-opacity=".18">
-      <path d="M40 36c-6-9-2-17 6-19 1 9-1 15-6 19z"/><path d="M52 34c9-6 18-4 21 3-9 2-15 1-21-3z"/>
-      <path d="M78 32c-5-10 0-17 8-18 0 9-3 15-8 18z"/><path d="M92 31c9-5 17-2 20 5-9 1-15 0-20-5z"/>
-      <path d="M150 28c-4-10 1-17 9-17 0 9-4 14-9 17z"/><path d="M164 27c9-4 17-1 19 6-9 1-15-1-19-6z"/>
-      <path d="M190 26c-4-9 1-15 8-16 0 8-3 13-8 16z"/><path d="M204 25c8-4 15-1 17 5-8 1-13-1-17-5z"/>
+  <svg class="branch" viewBox="0 0 300 70" fill="none" stroke="#161616" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 50c30-6 58-14 92-15 30-1 52 6 84 3 34-3 64-14 100-24"/>
+    <path d="M70 40c-4-6-10-9-16-9"/><path d="M226 26c3-6 8-10 14-11"/>
+    <g style="fill:var(--sage)" fill-opacity=".45">
+      <path d="M40 45c-3-8 1-15 9-17 1 8-3 14-9 17z"/><path d="M56 41c6-6 14-6 19-1-6 4-13 5-19 1z"/>
+      <path d="M96 35c-2-8 2-14 10-16 1 8-3 13-10 16z"/><path d="M112 35c7-4 15-3 19 3-7 3-14 2-19-3z"/>
+      <path d="M196 37c-1-8 4-13 12-14 0 8-5 13-12 14z"/><path d="M214 33c6-5 14-5 18 1-6 4-13 4-18-1z"/>
+      <path d="M262 22c-1-7 4-12 11-13 0 7-5 12-11 13z"/>
     </g>
-    <circle cx="122" cy="36" r="4" fill="currentColor" fill-opacity=".5"/><circle cx="232" cy="30" r="3.5" fill="currentColor" fill-opacity=".5"/>
+    <use href="#i-daisy" x="138" y="22" width="26" height="26"/>
+    <use href="#i-daisy" x="20" y="38" width="20" height="20"/>
+    <use href="#i-daisy" x="272" y="4" width="20" height="20"/>
+    <use href="#i-daisy" x="168" y="34" width="15" height="15"/>
+    <path d="M158 14s-6.5-4-6.5-8.6a3.6 3.6 0 0 1 6.5-2.2 3.6 3.6 0 0 1 6.5 2.2c0 4.6-6.5 8.6-6.5 8.6z" fill="#b3121b" stroke="none"/>
   </svg>
 </template>
 
@@ -207,6 +216,7 @@ footer .sig{font-family:var(--script);font-size:2rem;color:var(--terra);margin-t
   <div class="wrap">
     <div data-branch></div>
     <h1 class="names">Ildi &amp; Kostas</h1>
+    <hr class="rule">
     <div class="date" data-i18n="welcome.date"></div>
     <p class="welcome-msg" data-i18n="welcome.msg"></p>
     <div class="venue">
@@ -254,7 +264,7 @@ footer .sig{font-family:var(--script);font-size:2rem;color:var(--terra);margin-t
         <div class="d" data-i18n="activities.d14"></div>
         <h3 data-i18n="activities.t14"></h3>
         <p data-i18n="activities.p14"></p>
-        <span class="tba"><svg class="icon"><use href="#i-heart"/></svg><span data-i18n="activities.when14"></span></span>
+        <span class="tba"><svg class="icon" style="color:var(--heart);fill:currentColor;stroke:none"><use href="#i-heart"/></svg><span data-i18n="activities.when14"></span></span>
       </article>
       <article class="day">
         <div class="d" data-i18n="activities.d15"></div>
@@ -277,7 +287,7 @@ footer .sig{font-family:var(--script);font-size:2rem;color:var(--terra);margin-t
     <div class="map-tools">
       <div class="legend">
         <span><i class="zone"></i><span data-i18n="map.zone"></span></span>
-        <span><i style="background:var(--terra)"></i><span data-i18n="map.food"></span></span>
+        <span><i style="background:var(--accent)"></i><span data-i18n="map.food"></span></span>
         <span><i style="background:var(--sage-deep)"></i><span data-i18n="map.drinks"></span></span>
         <span><i style="background:var(--sky)"></i><span data-i18n="map.sights"></span></span>
       </div>
@@ -549,7 +559,7 @@ const STAY_ZONE = [
 ];
 
 /* ===================================================================== */
-const CAT_COLOR = {food:"#b8664a",drinks:"#5f7052",sights:"#6f8fa3"};
+const CAT_COLOR = {food:"#161616",drinks:"#5f7052",sights:"#6f8fa3"};
 const SUPPORTED = ["en","hu","el"];
 let lang = "en", map, markers = {}, venueMarker, showingVenue = false;
 const pick = v => (v && typeof v === "object") ? (v[lang] || v.en) : v;
@@ -569,7 +579,7 @@ function renderRecs(){
   const el = document.getElementById("recs");
   el.innerHTML = RECS.map(r => `
     <article class="rec ${r.cat}" id="rec-${r.id}">
-      <div class="ph" data-img="images/${r.id}.jpg"><svg class="icon"><use href="#i-${r.icon}"/></svg></div>
+      <div class="ph" data-img="images/${r.id}.jpg"><svg class="icon"><use href="#i-${r.icon}"/></svg><svg class="icon daisy"><use href="#i-daisy"/></svg></div>
       <div class="body">
         <h3>${esc(pick(r.t))}</h3>
         <p>${esc(pick(r.d))}</p>
@@ -615,7 +625,7 @@ function initMap(){
     const m = L.circleMarker([p.lat,p.lng], {radius:8, color:"#fff", weight:2, fillColor:CAT_COLOR[r.cat], fillOpacity:1}).addTo(map);
     markers[`${r.id}-${i}`] = {m, r, p};
   }));
-  venueMarker = L.marker([VENUE.lat,VENUE.lng], {icon:L.divIcon({className:"", html:'<div class="venue-pin" style="width:34px;height:34px"><svg class="icon" style="width:18px;height:18px"><use href="#i-heart"/></svg></div>', iconSize:[34,34], iconAnchor:[17,17]})}).addTo(map);
+  venueMarker = L.marker([VENUE.lat,VENUE.lng], {icon:L.divIcon({className:"", html:'<div class="venue-pin" style="width:34px;height:34px"><svg class="icon" style="width:18px;height:18px;fill:currentColor;stroke:none"><use href="#i-heart"/></svg></div>', iconSize:[34,34], iconAnchor:[17,17]})}).addTo(map);
   showCity();
   document.getElementById("venueToggle").addEventListener("click", () => showingVenue ? showCity() : showVenue());
 }
